@@ -1,0 +1,120 @@
+Documentation is online, follow the link below to view it
+Link: https://carter.games/shortcuts.html
+
+
+Offline Documentation Copy:
+
+
+Contributors: Jonathan Carter
+Documentation Valid for Version: 1.0.1
+Last Updated: 09/10/2020
+
+
+Contents:
+
+1 - Package Information
+2 - Using The Asset
+    2.1 - Initial Setup
+    2.2 - The Sidebar
+        2.2.1 - Script Creation
+        2.2.2 - General
+        2.2.3 - Preferences
+        2.2.4 - Project Settings
+        2.2.5 - Build Settings
+        2.2.6 - Carter Games
+3 - Shortcuts
+4 - Error Messages & Common Problems
+
+
+1) Package Information
+
+The package has 2 folders & 4 files:
+
+Editor/Carter Games/Shortcuts: ShortcutsEditorWindow.cs
+Resourses/Carter Games/Shortcuts: IconSC.png
+Readme: Text file that goes over the changelog for the asset.
+Docs: Text file that links to here and provides an offline copy of this page.
+
+2) Using The Asset
+
+Initial Setup
+To setup this asset, import all elements of the shortcuts package into your project and move the Carter Games folders in both the editor and resources folder from the package 
+into your own folders. Once done the asset will be ready for use. The asset will work as imported though you may expereice issues when building your project if the editor 
+folder is not ignored when you build your game.
+
+
+The Sidebar
+
+The asset with a useful sidebar window that can be docked anywhere in your editor or left standalone if needed. This sidebar allows you to quickly access some area of the Unity 
+editor that are needed often but have no shortcuts to get to. 
+
+
+Script Creation
+
+This section allows you to create new scripts with templates for some common types used in game development. This can save you time as you won't need to change the default template 
+each time you make a script or copy your own templates over when you change editor version.
+
+
+
+The Controls
+
+Inc Namespace
+Should the script be in a namespace? (the namespace option will appear if true).
+
+File Name
+What should the script be called? This will be the class name.
+
+Namespace (only if inc namespace if true)
+The namespace the script will be under.
+
+Once you have entered a filename the sidebar will show the Options buttons, simply press the button for the script type you would like to create and it will create it. Note that Custom inspectors and editor windows will have "###" in places where you will need to add the script the custom inspector is for or the menu for the window respectively.
+
+
+
+General
+These are simple buttons to open other windows that don't fall into a catergory, each button opens the respective window.
+
+Preferences
+These buttons open certain parts of the Unity editor preferences, note that the key bindings option only shows up in the 2018 version of Untiy, if  
+you are using a more upto date version this button will not be visable.
+
+Project Settings
+Similar to the previous groupings, these buttons open up parts of the project settings that are commonly used. if the window is already docked or open it will bring it up to the window you have selected.
+
+
+Build Settings
+This simply opens the build settings menu. Nothing else to it really.
+
+Carter Games
+If you have one of some of our other assets in your project some additional options may popup based on the asset in question, currently there are options for the following assets:
+
+Save Manager
+Audio Manager +
+
+
+3) Shortcuts
+
+The asset also comes with some additional shortcuts which can all be found under Carter Games/Shortcuts on the navigation bar in Unity.
+
+Shift + Alt + S  
+Opens or focuses on the sidebar window.
+
+Shift + Alt + R
+Resets the transform of all objects currently selected.
+
+Shift + Alt + P
+Opens the Unity Package Manager.
+
+Shift + Alt +E
+Opens the Project Settings Window
+
+Shift + Alt +D
+Opens the Preferences Window.
+
+
+
+4) Error Messages & Common Problems
+
+If you run into a problem or get an error and are unsure, feel free to drop me an email at (hello@carter.games) and I'll do my best to help you out.
+
+We don't have any specific problems that we can forsee, if any become a common question we will be sure to add it here.
