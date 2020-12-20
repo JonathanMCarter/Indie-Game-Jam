@@ -14,11 +14,13 @@ namespace CarterGames.MusicalTurnBased
     public class TurnController : MonoBehaviour
     {
         public List<GameObject> movesThisTurn;
+        public GameObject playerAction;
         public bool isRunning;
 
         [SerializeField] private AudioSource source;
         [SerializeField] private float timeBetweenTurns;
         private float timer;
+        private float actionTimer;
 
 
         private void Awake()
@@ -39,6 +41,16 @@ namespace CarterGames.MusicalTurnBased
                 {
                     PerformMoves();
                     timer = 0;
+                }
+
+                if (actionTimer < timeBetweenTurns)
+                {
+                    actionTimer += Time.deltaTime;
+                }
+                else if (actionTimer > timeBetweenTurns)
+                {
+                    PerformActionMoves();
+                    actionTimer = 0;
                 }
             }
         }
@@ -69,6 +81,16 @@ namespace CarterGames.MusicalTurnBased
             }
 
             movesThisTurn.Clear();
+        }
+
+
+        /// <summary>
+        /// Runs the actions for the player/enemy(ies)
+        /// </summary>
+        private void PerformActionMoves()
+        {
+            playerAction.GetComponent<PlayerController>().MakeAction();
+            playerAction = null;
         }
     }
 }
