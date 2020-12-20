@@ -58,6 +58,11 @@ namespace CarterGames.MusicalTurnBased
             {
                 SendMove(Moves.Down);
             }
+
+            if (toMoveTo)
+            {
+                transform.position = Vector3.Lerp(transform.position, toMoveTo.transform.GetChild(0).transform.position, 4 * Time.deltaTime);
+            }
         }
 
 
@@ -182,11 +187,6 @@ namespace CarterGames.MusicalTurnBased
             {
                 if (movementArrows[i].enabled)
                     movementArrows[i].enabled = false;
-            }
-
-            if (toMoveTo)
-            {
-                transform.position = toMoveTo.transform.GetChild(0).transform.position;
             }
         }
     }

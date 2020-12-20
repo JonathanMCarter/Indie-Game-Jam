@@ -16,6 +16,7 @@ namespace CarterGames.MusicalTurnBased
         public List<GameObject> movesThisTurn;
         public bool isRunning;
 
+        [SerializeField] private AudioSource source;
         [SerializeField] private float timeBetweenTurns;
         private float timer;
 
@@ -34,7 +35,7 @@ namespace CarterGames.MusicalTurnBased
                 {
                     timer += Time.deltaTime;
                 }
-                else
+                else if (timer > timeBetweenTurns)
                 {
                     PerformMoves();
                     timer = 0;
