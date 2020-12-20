@@ -42,6 +42,26 @@ namespace CarterGames.MusicalTurnBased
 
         private void Update()
         {
+            ReadInput();
+
+            if (toMoveTo)
+            {
+                transform.position = Vector3.Lerp(transform.position, toMoveTo.transform.GetChild(0).transform.position, 4 * Time.deltaTime);
+            }
+        }
+
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Em"))
+            {
+
+            }
+        }
+
+
+        private void ReadInput()
+        {
             if (actions.Gameplay.Movement.ReadValue<Vector2>().x > .1f)
             {
                 SendMove(Moves.Right);
@@ -57,11 +77,6 @@ namespace CarterGames.MusicalTurnBased
             else if (actions.Gameplay.Movement.ReadValue<Vector2>().y < -.1f)
             {
                 SendMove(Moves.Down);
-            }
-
-            if (toMoveTo)
-            {
-                transform.position = Vector3.Lerp(transform.position, toMoveTo.transform.GetChild(0).transform.position, 4 * Time.deltaTime);
             }
         }
 
