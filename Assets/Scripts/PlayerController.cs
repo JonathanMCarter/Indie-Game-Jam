@@ -55,7 +55,7 @@ namespace CarterGames.MusicalTurnBased
         {
             if (other.CompareTag("Em"))
             {
-
+                gameObject.SetActive(false);
             }
         }
 
@@ -65,18 +65,22 @@ namespace CarterGames.MusicalTurnBased
             if (actions.Gameplay.Movement.ReadValue<Vector2>().x > .1f)
             {
                 SendMove(Moves.Right);
+                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, -90, 0);
             }
             else if (actions.Gameplay.Movement.ReadValue<Vector2>().x < -.1f)
             {
                 SendMove(Moves.Left);
+                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 90, 0);
             }
             else if (actions.Gameplay.Movement.ReadValue<Vector2>().y > .1f)
             {
                 SendMove(Moves.Up);
+                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 180, 0);
             }
             else if (actions.Gameplay.Movement.ReadValue<Vector2>().y < -.1f)
             {
                 SendMove(Moves.Down);
+                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
 

@@ -34,6 +34,7 @@ namespace CarterGames.Utilities
                 {
                     transform.localScale = targetScale;
                     isSetup = true;
+                    enabled = false;
                 }
             }
         }

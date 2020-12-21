@@ -107,6 +107,7 @@ namespace CarterGames.MusicalTurnBased
                         if (_hit.collider.CompareTag("Tile"))
                         {
                             toMoveTo = _hit.collider.gameObject;
+                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 180, 0);
                         }
                     }
 
@@ -118,6 +119,7 @@ namespace CarterGames.MusicalTurnBased
                         if (_hit.collider.CompareTag("Tile"))
                         {
                             toMoveTo = _hit.collider.gameObject;
+                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
                         }
                     }
 
@@ -129,6 +131,7 @@ namespace CarterGames.MusicalTurnBased
                         if (_hit.collider.CompareTag("Tile"))
                         {
                             toMoveTo = _hit.collider.gameObject;
+                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 90, 0);
                         }
                     }
 
@@ -140,6 +143,7 @@ namespace CarterGames.MusicalTurnBased
                         if (_hit.collider.CompareTag("Tile"))
                         {
                             toMoveTo = _hit.collider.gameObject;
+                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, -90, 0);
                         }
                     }
 
