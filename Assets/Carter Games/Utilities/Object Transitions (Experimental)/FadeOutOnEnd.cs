@@ -19,12 +19,18 @@ namespace CarterGames.Utilities
         {
             if (runEffect)
             {
-                PerformEndEffect();
+                FadeOut();
             }
         }
 
 
         public void PerformEndEffect()
+        {
+            runEffect = true;
+        }
+
+
+        private void FadeOut()
         {
             if (!hasCompleted)
             {

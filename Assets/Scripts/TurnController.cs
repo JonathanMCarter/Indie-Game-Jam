@@ -89,7 +89,7 @@ namespace CarterGames.MusicalTurnBased
         /// </summary>
         private void PerformActionMoves()
         {
-            playerAction.GetComponent<PlayerController>().MakeAction();
+            playerAction.GetComponent<Shoot>().MakeAction();
             playerAction = null;
         }
     }
