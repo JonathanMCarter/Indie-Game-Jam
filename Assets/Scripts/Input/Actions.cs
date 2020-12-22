@@ -28,19 +28,19 @@ public class @Actions : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Accept"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""7347236c-5352-4922-8fc7-5478a0d8fed7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Cancel"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""f21b6325-dc2e-47cb-ac39-e0411f069a80"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 }
             ],
             ""bindings"": [
@@ -212,7 +212,7 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cb23efff-9286-4402-b533-5a59ffa30c97"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -245,10 +245,32 @@ public class @Actions : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b6ecf8a7-2c90-4d55-88b5-1f87eebdd8a1"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc393e0f-6d26-4bc0-b900-f29572db7e3f"",
+                    ""path"": ""<Keyboard>/backspace"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""PC"",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbc8924e-f7eb-4be1-81f6-36bf4fbeba47"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

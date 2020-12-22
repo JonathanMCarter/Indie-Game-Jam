@@ -8,6 +8,7 @@ namespace CarterGames.Assets.SaveManager
     [Serializable]
     public class SaveData
     {
-        [SerializeField] public string check;
+        [SerializeField] public string lastLevel;
+        [SerializeField] public int presentsCollected;
     }
 }

@@ -13,8 +13,7 @@ namespace CarterGames.MusicalTurnBased
     {
         [SerializeField] private TurnController tc;
         [SerializeField] private FadeOutOnEnd[] fadeOut;
-
-        private bool hasLevelEnded;
+        [SerializeField] private GameObject[] toDisable;
 
 
         private void Start()
@@ -28,17 +27,27 @@ namespace CarterGames.MusicalTurnBased
             if (other.CompareTag("Player"))
             {
                 FadeOutLevel();
-                hasLevelEnded = true;
+                DisableObjects();
                 tc.isRunning = false;
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneChanger>().LevelWon();
             }
         }
 
 
-        private void FadeOutLevel()
+        public void FadeOutLevel()
         {
             for (int i = 0; i < fadeOut.Length; i++)
             {
                 fadeOut[i].PerformEndEffect();
+            }
+        }
+
+
+        private void DisableObjects()
+        {
+            for (int i = 0; i < toDisable.Length; i++)
+            {
+                toDisable[i].SetActive(false);
             }
         }
     }

@@ -7,6 +7,7 @@ TagManager:
   - TurnController
   - Tile
   - Em
+  - Exit
   layers:
   - Default
   - TransparentFX
