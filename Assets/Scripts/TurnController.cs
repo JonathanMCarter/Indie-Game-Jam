@@ -8,7 +8,7 @@ using System.Collections;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public enum Moves { Up, Down, Left, Right, Attack, Defend, Steal, Leave, None }
 

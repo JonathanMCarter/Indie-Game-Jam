@@ -8,7 +8,7 @@ using CarterGames.Assets.SaveManager;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class GameManager : MonoBehaviour
     {
@@ -33,9 +33,17 @@ namespace CarterGames.MusicalTurnBased
             {
                 lastScene = SceneManager.GetActiveScene().name;
                 presentUI = FindObjectOfType<PresentUI>();
-                presentUI.SetPresentUIValue(presents);
-                _data.lastLevel = lastScene;
-                SaveManager.SaveGame(_data);
+
+                if (presentUI)
+                {
+                    presentUI.SetPresentUIValue(presents);
+                }
+
+                if (!lastScene.Equals("Menu"))
+                {
+                    _data.lastLevel = lastScene;
+                    SaveManager.SaveGame(_data);
+                }
             }
         }
 

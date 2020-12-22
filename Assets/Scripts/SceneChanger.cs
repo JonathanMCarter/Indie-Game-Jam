@@ -9,7 +9,7 @@ using CarterGames.Assets.SaveManager;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class SceneChanger : MonoBehaviour
     {
@@ -62,7 +62,15 @@ namespace CarterGames.MusicalTurnBased
         {
             exit.FadeOutLevel();
             yield return new WaitForSeconds(1f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            if (!SceneManager.GetActiveScene().name.Contains("3"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
 
 
@@ -82,6 +90,14 @@ namespace CarterGames.MusicalTurnBased
         public void ExitGame()
         {
             Application.Quit();
+        }
+
+
+        public void ResetPresentCounter()
+        {
+            SaveData _data = SaveManager.LoadGame();
+            _data.presentsCollected = 0;
+            SaveManager.SaveGame(_data);
         }
     }
 }
