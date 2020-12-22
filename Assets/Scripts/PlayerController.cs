@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /*
@@ -9,7 +10,7 @@ using UnityEngine.UI;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class PlayerController : MonoBehaviour
     {
@@ -56,6 +57,7 @@ namespace CarterGames.MusicalTurnBased
             if (other.CompareTag("Em"))
             {
                 gameObject.SetActive(false);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneChanger>().LevelFailed();
             }
         }
 
@@ -88,7 +90,7 @@ namespace CarterGames.MusicalTurnBased
         public void SendMove(Moves _move)
         {
             selectedMove = _move;
-            tc.AddMove(this.gameObject);
+            tc.playerAction = this.gameObject;
             SetMovementArrow();
         }
 
@@ -207,12 +209,6 @@ namespace CarterGames.MusicalTurnBased
                 if (movementArrows[i].enabled)
                     movementArrows[i].enabled = false;
             }
-        }
-
-
-        public void MakeAction()
-        {
-            
         }
     }
 }

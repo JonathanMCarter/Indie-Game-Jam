@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -6,11 +7,12 @@ using UnityEngine;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private GameObject player;
+        [SerializeField] private List<Moves> assignedMoves;
 
         private TurnController tc;
         private GameObject toMoveTo;
@@ -96,60 +98,126 @@ namespace CarterGames.MusicalTurnBased
 
         private void MoveEnemy()
         {
-            RaycastHit _hit;
-
-            switch (ChooseDirection())
+            if (assignedMoves == null || assignedMoves.Count.Equals(0))
             {
-                case Moves.Up:
+                RaycastHit _hit;
 
-                    if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
-                    {
-                        if (_hit.collider.CompareTag("Tile"))
+                switch (ChooseDirection())
+                {
+                    case Moves.Up:
+
+                        if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
                         {
-                            toMoveTo = _hit.collider.gameObject;
-                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 180, 0);
+                            if (_hit.collider.CompareTag("Tile"))
+                            {
+                                toMoveTo = _hit.collider.gameObject;
+                                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 180, 0);
+                            }
                         }
+
+                        break;
+                    case Moves.Down:
+
+                        if (Physics.Raycast(transform.position, transform.forward * 2f, out _hit))
+                        {
+                            if (_hit.collider.CompareTag("Tile"))
+                            {
+                                toMoveTo = _hit.collider.gameObject;
+                                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
+                            }
+                        }
+
+                        break;
+                    case Moves.Left:
+
+                        if (Physics.Raycast(transform.position, transform.right * 2f, out _hit))
+                        {
+                            if (_hit.collider.CompareTag("Tile"))
+                            {
+                                toMoveTo = _hit.collider.gameObject;
+                                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 90, 0);
+                            }
+                        }
+
+                        break;
+                    case Moves.Right:
+
+                        if (Physics.Raycast(transform.position, -transform.right * 2f, out _hit))
+                        {
+                            if (_hit.collider.CompareTag("Tile"))
+                            {
+                                toMoveTo = _hit.collider.gameObject;
+                                transform.GetChild(0).transform.rotation = Quaternion.Euler(0, -90, 0);
+                            }
+                        }
+
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                RaycastHit _hit;
+
+                if (assignedMoves.Count > 0)
+                {
+                    switch (assignedMoves[assignedMoves.Count - 1])
+                    {
+                        case Moves.Up:
+
+                            if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
+                            {
+                                if (_hit.collider.CompareTag("Tile"))
+                                {
+                                    toMoveTo = _hit.collider.gameObject;
+                                    transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 180, 0);
+                                }
+                            }
+
+                            break;
+                        case Moves.Down:
+
+                            if (Physics.Raycast(transform.position, transform.forward * 2f, out _hit))
+                            {
+                                if (_hit.collider.CompareTag("Tile"))
+                                {
+                                    toMoveTo = _hit.collider.gameObject;
+                                    transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
+                                }
+                            }
+
+                            break;
+                        case Moves.Left:
+
+                            if (Physics.Raycast(transform.position, transform.right * 2f, out _hit))
+                            {
+                                if (_hit.collider.CompareTag("Tile"))
+                                {
+                                    toMoveTo = _hit.collider.gameObject;
+                                    transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 90, 0);
+                                }
+                            }
+
+                            break;
+                        case Moves.Right:
+
+                            if (Physics.Raycast(transform.position, -transform.right * 2f, out _hit))
+                            {
+                                if (_hit.collider.CompareTag("Tile"))
+                                {
+                                    toMoveTo = _hit.collider.gameObject;
+                                    transform.GetChild(0).transform.rotation = Quaternion.Euler(0, -90, 0);
+                                }
+                            }
+
+                            break;
+                        default:
+                            break;
                     }
 
-                    break;
-                case Moves.Down:
-
-                    if (Physics.Raycast(transform.position, transform.forward * 2f, out _hit))
-                    {
-                        if (_hit.collider.CompareTag("Tile"))
-                        {
-                            toMoveTo = _hit.collider.gameObject;
-                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 0, 0);
-                        }
-                    }
-
-                    break;
-                case Moves.Left:
-
-                    if (Physics.Raycast(transform.position, transform.right * 2f, out _hit))
-                    {
-                        if (_hit.collider.CompareTag("Tile"))
-                        {
-                            toMoveTo = _hit.collider.gameObject;
-                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, 90, 0);
-                        }
-                    }
-
-                    break;
-                case Moves.Right:
-
-                    if (Physics.Raycast(transform.position, -transform.right * 2f, out _hit))
-                    {
-                        if (_hit.collider.CompareTag("Tile"))
-                        {
-                            toMoveTo = _hit.collider.gameObject;
-                            transform.GetChild(0).transform.rotation = Quaternion.Euler(0, -90, 0);
-                        }
-                    }
-
-                    break;
-                default:
-                    break;
+                    assignedMoves.RemoveAt(assignedMoves.Count - 1);
+                }
             }
         }
     }

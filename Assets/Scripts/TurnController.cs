@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -7,9 +8,9 @@ using System.Collections.Generic;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
-    public enum Moves { Up, Down, Left, Right, Attack, Defend, Steal, Leave }
+    public enum Moves { Up, Down, Left, Right, Attack, Defend, Steal, Leave, None }
 
     public class TurnController : MonoBehaviour
     {
@@ -20,12 +21,14 @@ namespace CarterGames.MusicalTurnBased
         [SerializeField] private AudioSource source;
         [SerializeField] private float timeBetweenTurns;
         private float timer;
-        private float actionTimer;
+        [SerializeField] private float actionTimer;
+        [SerializeField] private float startDelay;
 
 
         private void Awake()
         {
             movesThisTurn = new List<GameObject>();
+            StartCoroutine(StartDelay());
         }
 
 
@@ -39,7 +42,8 @@ namespace CarterGames.MusicalTurnBased
                 }
                 else if (timer > timeBetweenTurns)
                 {
-                    PerformMoves();
+                    PerformEnemyActions();
+                    PerformPlayerAction();
                     timer = 0;
                 }
 
@@ -49,7 +53,7 @@ namespace CarterGames.MusicalTurnBased
                 }
                 else if (actionTimer > timeBetweenTurns)
                 {
-                    PerformActionMoves();
+                    PerformPlayerAction();
                     actionTimer = 0;
                 }
             }
@@ -70,27 +74,31 @@ namespace CarterGames.MusicalTurnBased
         /// <summary>
         /// Runs the moves for the enemies and player on time.
         /// </summary>
-        private void PerformMoves()
+        private void PerformEnemyActions()
         {
             for (int i = 0; i < movesThisTurn.Count; i++)
             {
-                if (movesThisTurn[i].CompareTag("Player"))
-                    movesThisTurn[i].GetComponent<PlayerController>().MakeMove();
-                else
-                    movesThisTurn[i].GetComponent<Enemy>().MakeMove();
+                movesThisTurn[i].GetComponent<Enemy>().MakeMove();
             }
 
             movesThisTurn.Clear();
         }
 
 
-        /// <summary>
-        /// Runs the actions for the player/enemy(ies)
-        /// </summary>
-        private void PerformActionMoves()
+        private void PerformPlayerAction()
         {
-            playerAction.GetComponent<Shoot>().MakeAction();
-            playerAction = null;
+            if (playerAction)
+            {
+                playerAction.GetComponent<PlayerController>().MakeMove();
+                playerAction = null;
+            }
+        }
+
+
+        private IEnumerator StartDelay()
+        {
+            yield return new WaitForSeconds(startDelay);
+            isRunning = true;
         }
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class FollowPlayer : MonoBehaviour
     {

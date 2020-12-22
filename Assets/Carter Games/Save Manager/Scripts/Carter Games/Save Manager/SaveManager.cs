@@ -65,7 +65,12 @@ namespace CarterGames.Assets.SaveManager
             }
             else
             {
-                Debug.LogError("Save file not found!");
+                // Edit from initial SM
+                BinaryFormatter Formatter = new BinaryFormatter();
+                FileStream Stream = new FileStream(SavePath, FileMode.OpenOrCreate);
+                Formatter.Serialize(Stream, new SaveData());
+                Stream.Close();
+                Debug.LogError("Save file not found! - Making One");
                 return null;
             }
         }

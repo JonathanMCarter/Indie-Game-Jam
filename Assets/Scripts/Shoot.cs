@@ -7,7 +7,7 @@ using System.Collections;
 *  W: https://jonathan.carter.games/
 */
 
-namespace CarterGames.MusicalTurnBased
+namespace CarterGames.NoPresentsForYou
 {
     public class Shoot : MonoBehaviour
     {
@@ -36,8 +36,10 @@ namespace CarterGames.MusicalTurnBased
             {
                 if (!weaponPool[i].activeInHierarchy)
                 {
-                    weaponPool[i].GetComponent<Rigidbody>().velocity = transform.GetChild(0).transform.GetChild(0).transform.forward * weaponSpd * Time.deltaTime;
+                    weaponPool[i].GetComponent<Rigidbody>().velocity = transform.GetChild(0).transform.GetChild(0).transform.forward * weaponSpd;
+                    weaponPool[i].transform.position = transform.position;
                     weaponPool[i].SetActive(true);
+                    break;
                 }
             }
         }
