@@ -157,5 +157,35 @@ namespace CarterGames.Utilities
                 return false;
             }
         }
+
+
+        /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Method | Checks to see which is the two values is higher, regardless of +/-.
+        /// </summary>
+        /// <param name="value0">Value 0 to check</param>
+        /// <param name="value1">Value 1 to check</param>
+        /// <returns>Ture if 0 is higher than 1, false otherwise.</returns>
+        /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static bool FaceValueCheck(float value0, float value1)
+        {
+            float _check0, _check1;
+
+            if (value0 < 0)
+                _check0 = value0 * -1;
+            else
+                _check0 = value0;
+
+            if (value1 < 0)
+                _check1 = value1 * -1;
+            else
+                _check1 = value1;
+
+
+            if (_check0 > _check1)
+                return true;
+            else
+                return false;
+        }
     }
 }

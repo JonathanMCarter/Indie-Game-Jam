@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using CarterGames.Utilities;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -47,6 +48,11 @@ namespace CarterGames.NoPresentsForYou
         }
 
 
+        /// <summary>
+        /// Checks to see if the value is positive.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         private char IsPositive(float value)
         {
             if (value > 0)
@@ -56,6 +62,9 @@ namespace CarterGames.NoPresentsForYou
             else
                 return 'z';
         }
+
+
+
 
         /// <summary>
         /// Legit using my Y1-PF-AE2 Pathfinding Solution, as it still works and my pervious attempt had a few troubles with walls/holes.
@@ -67,13 +76,16 @@ namespace CarterGames.NoPresentsForYou
             bool isZ = false;
 
 
-            if (_check.z > _check.x)
+            if (Check.FaceValueCheck(_check.z, _check.x))
                 isZ = true;
+            else
+                isZ = false;
 
 
-            float _testX = IsPositive(_check.x);
-            float _testZ = IsPositive(_check.z);
+            char _testX = IsPositive(_check.x);
+            char _testZ = IsPositive(_check.z);
 
+            //Debug.Log(_testX + " : " + _testZ + " : " + _check);
 
             if (isZ)
             {
@@ -154,7 +166,11 @@ namespace CarterGames.NoPresentsForYou
         }
 
 
-
+        /// <summary>
+        /// Checks to make sure the direction can be taken, if not it tries the next move until going back on itself.
+        /// </summary>
+        /// <param name="toCheck">Move to check</param>
+        /// <returns></returns>
         private bool CheckDirection(Moves toCheck)
         {
             switch (toCheck)
@@ -206,7 +222,9 @@ namespace CarterGames.NoPresentsForYou
             return false;
         }
 
-
+        /// <summary>
+        /// Actually moves the enemy arround.
+        /// </summary>
         private void MoveEnemy()
         {
             if (assignedMoves == null || assignedMoves.Count.Equals(0))
