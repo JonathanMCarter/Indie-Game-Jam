@@ -57,7 +57,7 @@ namespace CarterGames.NoPresentsForYou
             if (other.CompareTag("Em"))
             {
                 gameObject.SetActive(false);
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneChanger>().LevelFailed();
+                GameObject.FindGameObjectWithTag("Changer").GetComponent<SceneChanger>().LevelFailed();
             }
         }
 

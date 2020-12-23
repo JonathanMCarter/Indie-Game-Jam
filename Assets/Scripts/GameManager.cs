@@ -44,6 +44,11 @@ namespace CarterGames.NoPresentsForYou
                     _data.lastLevel = lastScene;
                     SaveManager.SaveGame(_data);
                 }
+
+                if (presents < 0)
+                {
+                    FindObjectOfType<SceneChanger>().GameOver();
+                }
             }
         }
 
@@ -51,6 +56,14 @@ namespace CarterGames.NoPresentsForYou
         public void AddPresents()
         {
             presents++;
+            presentUI.SetPresentUIValue(presents);
+            _data.presentsCollected = presents;
+        }
+
+
+        public void RemovePresent()
+        {
+            presents--;
             presentUI.SetPresentUIValue(presents);
             _data.presentsCollected = presents;
         }
