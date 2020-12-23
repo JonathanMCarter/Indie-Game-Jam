@@ -13,11 +13,12 @@ namespace CarterGames.NoPresentsForYou
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private GameObject player;
+        [SerializeField] private int tickToMoveOn;
         [SerializeField] private List<Moves> assignedMoves;
         [SerializeField] private Moves[] pathFinding;
 
-        private TurnController tc;
-        private GameObject toMoveTo;
+        internal TurnController tc;
+        internal GameObject toMoveTo;
         private RaycastHit _hit;
 
         private void Start()
@@ -44,7 +45,8 @@ namespace CarterGames.NoPresentsForYou
 
         public void MakeMove()
         {
-            MoveEnemy();
+            if ((tc.tick % tickToMoveOn).Equals(0))
+                MoveEnemy();
         }
 
 
@@ -64,13 +66,11 @@ namespace CarterGames.NoPresentsForYou
         }
 
 
-
-
         /// <summary>
         /// Legit using my Y1-PF-AE2 Pathfinding Solution, as it still works and my pervious attempt had a few troubles with walls/holes.
         /// </summary>
         /// <returns></returns>
-        private void ChooseDirection()
+        internal void ChooseDirection()
         {
             Vector3 _check = player.transform.position - transform.position;
             bool isZ = false;
@@ -221,6 +221,7 @@ namespace CarterGames.NoPresentsForYou
 
             return false;
         }
+
 
         /// <summary>
         /// Actually moves the enemy arround.

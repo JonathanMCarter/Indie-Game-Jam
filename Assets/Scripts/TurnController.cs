@@ -23,6 +23,7 @@ namespace CarterGames.NoPresentsForYou
         private float timer;
         [SerializeField] private float actionTimer;
         [SerializeField] private float startDelay;
+        public int tick;
 
 
         private void Awake()
@@ -45,6 +46,7 @@ namespace CarterGames.NoPresentsForYou
                     PerformEnemyActions();
                     PerformPlayerAction();
                     timer = 0;
+                    tick++;
                 }
 
                 if (actionTimer < timeBetweenTurns)
@@ -55,6 +57,7 @@ namespace CarterGames.NoPresentsForYou
                 {
                     PerformPlayerAction();
                     actionTimer = 0;
+                    tick++;
                 }
             }
         }

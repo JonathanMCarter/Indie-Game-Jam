@@ -27,6 +27,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks to see if the desired string is in the array of strings provided
+        /// Added In: The Isolation of Isabelle.
         /// </summary>
         /// <param name="toFind">string to search for</param>
         /// <param name="strings">strings to look through</param>
@@ -49,6 +50,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks to see if the current position is within a threashold of the target position
+        /// Added In: The Isolation of Isabelle.
         /// </summary>
         /// <param name="threashold">how much off can the vector3 be?</param>
         /// <param name="target">the target Vector3</param>
@@ -98,6 +100,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks to see if a layer is present in the hits of a raycast, true if there is, false if not
+        /// Added In: The Isolation of Isabelle.
         /// </summary>
         /// <param name="hits">Raycasthits to check.</param>
         /// <param name="layerToCheck">layer int to find</param>
@@ -120,6 +123,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks the two inputted Color32's to see if they are the same.
+        /// Added In: Crushing!
         /// </summary>
         /// <param name="colourA">First colour to check</param>
         /// <param name="colourB">Second colour to check</param>
@@ -141,6 +145,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks to see if a colour matches a float array of 4 elements.
+        /// Added In: Crushing!
         /// </summary>
         /// <param name="col">The colour to check.</param>
         /// <param name="array">The float array of 4 to check.</param>
@@ -162,6 +167,7 @@ namespace CarterGames.Utilities
         /// ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         /// <summary>
         /// Method | Checks to see which is the two values is higher, regardless of +/-.
+        /// Added In: No Present For You.
         /// </summary>
         /// <param name="value0">Value 0 to check</param>
         /// <param name="value1">Value 1 to check</param>
