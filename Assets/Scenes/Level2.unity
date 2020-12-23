@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 172833310}
   m_Layer: 5
   m_Name: OhDearText
-  m_TagString: Untagged
+  m_TagString: DeathUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3074,8 +3074,6 @@ GameObject:
   m_Component:
   - component: {fileID: 370664766}
   - component: {fileID: 370664765}
-  - component: {fileID: 370664764}
-  - component: {fileID: 370664763}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameController
@@ -3083,32 +3081,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &370664763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370664762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8c647374f4f88f4ab77220f130af1f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exit: {fileID: 0}
---- !u!114 &370664764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 370664762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecae7fec34605c643b7a4f112ca9ba10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  singletonID: gm
 --- !u!114 &370664765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3415,6 +3387,56 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396401766}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &401750868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401750870}
+  - component: {fileID: 401750869}
+  m_Layer: 0
+  m_Name: SceneChanger
+  m_TagString: Changer
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &401750869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401750868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8c647374f4f88f4ab77220f130af1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exit: {fileID: 2057269560}
+  deathElements:
+  - {fileID: 172833308}
+  - {fileID: 703530389}
+  - {fileID: 994087587}
+  quotes: {fileID: 703530391}
+  gm: {fileID: 370664765}
+--- !u!4 &401750870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401750868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406039206
 GameObject:
   m_ObjectHideFlags: 0
@@ -6946,7 +6968,7 @@ GameObject:
   - component: {fileID: 703530391}
   m_Layer: 5
   m_Name: DeathQuote
-  m_TagString: Untagged
+  m_TagString: DeathUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10142,7 +10164,7 @@ GameObject:
   - component: {fileID: 994087591}
   m_Layer: 5
   m_Name: BG
-  m_TagString: Untagged
+  m_TagString: DeathUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12620,7 +12642,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1293056315
 GameObject:
@@ -13833,7 +13855,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1385180040
 GameObject:
@@ -20101,8 +20123,31 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7112844708128433327, guid: 91c9e5b5da2baf74281aa91bbcfd00b4, type: 3}
+      propertyPath: toDisable.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7112844708128433327, guid: 91c9e5b5da2baf74281aa91bbcfd00b4, type: 3}
+      propertyPath: toDisable.Array.data[0]
+      value: 
+      objectReference: {fileID: 938057874819197761}
+    - target: {fileID: 7112844708128433327, guid: 91c9e5b5da2baf74281aa91bbcfd00b4, type: 3}
+      propertyPath: toDisable.Array.data[1]
+      value: 
+      objectReference: {fileID: 1489801301}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91c9e5b5da2baf74281aa91bbcfd00b4, type: 3}
+--- !u!114 &2057269560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7112844708128433327, guid: 91c9e5b5da2baf74281aa91bbcfd00b4, type: 3}
+  m_PrefabInstance: {fileID: 2053474746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147601cc1168a4d4a92edac31655c230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066721788
 GameObject:
   m_ObjectHideFlags: 0

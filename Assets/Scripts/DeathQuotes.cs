@@ -16,11 +16,13 @@ namespace CarterGames.NoPresentsForYou
         [SerializeField] private string[] quotes;
 
 
-        private void Update()
+        private void Start()
         {
-            
+            if (TryGetComponent(out TMP_Text text))
+            {
+                _text = GetComponent<TMP_Text>();
+            }
         }
-
 
         public void PlayerDied()
         {

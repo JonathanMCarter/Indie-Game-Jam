@@ -14,7 +14,9 @@ namespace CarterGames.NoPresentsForYou
     public class SceneChanger : MonoBehaviour
     {
         [SerializeField] private LevelExit exit;
-        [SerializeField] private GameObject deathElements;
+        [SerializeField] private GameObject[] deathElements;
+        [SerializeField] private DeathQuotes quotes;
+        [SerializeField] private GameManager gm;
         private SaveData _data;
 
 
@@ -27,6 +29,15 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             _data = SaveManager.LoadGame();
+            gm = GetComponent<GameManager>();
+
+            deathElements = new GameObject[3];
+            deathElements = GameObject.FindGameObjectsWithTag("DeathUI");
+
+            for (int i = 0; i < deathElements.Length; i++)
+            {
+                deathElements[i].SetActive(false);
+            }
         }
 
 
@@ -49,7 +60,15 @@ namespace CarterGames.NoPresentsForYou
         {
             exit.FadeOutLevel();
 
-            yield return new WaitForSeconds(2.5f);
+            for (int i = 0; i < deathElements.Length; i++)
+            {
+                deathElements[i].SetActive(true);
+            }
+
+            quotes.PlayerDied();
+            gm.RemovePresent();
+
+            yield return new WaitForSeconds(3f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
@@ -65,7 +84,7 @@ namespace CarterGames.NoPresentsForYou
             exit.FadeOutLevel();
             yield return new WaitForSeconds(1f);
 
-            if (!SceneManager.GetActiveScene().name.Contains("3"))
+            if (!SceneManager.GetActiveScene().name.Contains("5"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
@@ -100,6 +119,20 @@ namespace CarterGames.NoPresentsForYou
             SaveData _data = SaveManager.LoadGame();
             _data.presentsCollected = 0;
             SaveManager.SaveGame(_data);
+        }
+
+
+        public void GameOver()
+        {
+            StartCoroutine(IsGameOver());
+        }
+
+
+        private IEnumerator IsGameOver()
+        {
+            exit.FadeOutLevel();
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("GameOver");
         }
     }
 }

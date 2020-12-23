@@ -8,6 +8,8 @@ TagManager:
   - Tile
   - Em
   - Exit
+  - DeathUI
+  - Changer
   layers:
   - Default
   - TransparentFX

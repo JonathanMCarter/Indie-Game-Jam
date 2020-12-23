@@ -333,9 +333,9 @@ namespace CarterGames.NoPresentsForYou
                             break;
                     }
                 }
-                else if (CheckDirection(pathFinding[4]))
+                else if (CheckDirection(pathFinding[3]))
                 {
-                    switch (pathFinding[4])
+                    switch (pathFinding[3])
                     {
                         case Moves.Up:
                             if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
