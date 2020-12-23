@@ -14,6 +14,7 @@ namespace CarterGames.NoPresentsForYou
     public class SceneChanger : MonoBehaviour
     {
         [SerializeField] private LevelExit exit;
+        [SerializeField] private GameObject deathElements;
         private SaveData _data;
 
 
@@ -47,7 +48,8 @@ namespace CarterGames.NoPresentsForYou
         private IEnumerator LevelReset()
         {
             exit.FadeOutLevel();
-            yield return new WaitForSeconds(1f);
+
+            yield return new WaitForSeconds(2.5f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 

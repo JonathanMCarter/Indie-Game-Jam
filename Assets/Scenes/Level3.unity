@@ -15678,6 +15678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  tickToMoveOn: 0
   assignedMoves: 01000000
   pathFinding: 
 --- !u!54 &999996352
@@ -22611,6 +22612,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+--- !u!1 &1412333952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6106549986890561447, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+  m_PrefabInstance: {fileID: 1412333951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1412333953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412333952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a86eb93cb1c264b90fb3aaa8db8965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xAxis: 0
+  yAxis: 1
+  zAxis: 0
+  speed: 1
 --- !u!114 &1415151276 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7431566398767263060, guid: 5d96167ecf8b4894598685c32f7188f8, type: 3}
@@ -22689,6 +22711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106549986890561443, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 01c90d57824b93742ab7e4f1aa51d3be, type: 2}
     - target: {fileID: 6106549986890561445, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
       propertyPath: targetScale.x
       value: 0.7
@@ -22715,6 +22741,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+--- !u!1 &1417293206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6106549986890561447, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+  m_PrefabInstance: {fileID: 1417293205}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417293207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417293206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a86eb93cb1c264b90fb3aaa8db8965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xAxis: 0
+  yAxis: 1
+  zAxis: 0
+  speed: 1
 --- !u!1 &1457432848
 GameObject:
   m_ObjectHideFlags: 0
@@ -22967,6 +23014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  tickToMoveOn: 0
   assignedMoves: 01000000
   pathFinding: 
 --- !u!54 &1489801303
@@ -36751,6 +36799,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106549986890561443, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: aa9b84689a480f6429529ff73dabbd0a, type: 2}
     - target: {fileID: 6106549986890561445, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
       propertyPath: targetScale.x
       value: 0.7
@@ -36777,6 +36829,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+--- !u!1 &6106549987038809736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6106549986890561447, guid: 595514b94a7f9f34680b8cdeb20e35a7, type: 3}
+  m_PrefabInstance: {fileID: 6106549987038809735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6106549987038809737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6106549987038809736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1a86eb93cb1c264b90fb3aaa8db8965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xAxis: 0
+  yAxis: 1
+  zAxis: 0
+  speed: 1
 --- !u!1001 &7431566397489615864
 PrefabInstance:
   m_ObjectHideFlags: 0
