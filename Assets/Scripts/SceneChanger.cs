@@ -29,7 +29,9 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             _data = SaveManager.LoadGame();
-            gm = GetComponent<GameManager>();
+
+            if (GameObject.FindGameObjectWithTag("GameController"))
+                gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
 
             deathElements = new GameObject[3];
             deathElements = GameObject.FindGameObjectsWithTag("DeathUI");

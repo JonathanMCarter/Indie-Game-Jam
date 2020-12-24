@@ -14,7 +14,6 @@ namespace CarterGames.NoPresentsForYou
     {
         [SerializeField] private int presents;
         [SerializeField] private PresentUI presentUI;
-        private string lastScene;
         private SaveData _data;
 
 
@@ -29,26 +28,20 @@ namespace CarterGames.NoPresentsForYou
 
         private void Update()
         {
-            if (!SceneManager.GetActiveScene().name.Equals(lastScene))
+
+            presentUI = FindObjectOfType<PresentUI>();
+
+            if (presentUI)
             {
-                lastScene = SceneManager.GetActiveScene().name;
-                presentUI = FindObjectOfType<PresentUI>();
+                presentUI.SetPresentUIValue(presents);
+            }
 
-                if (presentUI)
-                {
-                    presentUI.SetPresentUIValue(presents);
-                }
+            SaveManager.SaveGame(_data);
 
-                if (!lastScene.Equals("Menu"))
-                {
-                    _data.lastLevel = lastScene;
-                    SaveManager.SaveGame(_data);
-                }
 
-                if (presents < 0)
-                {
-                    FindObjectOfType<SceneChanger>().GameOver();
-                }
+            if (presents < 0)
+            {
+                FindObjectOfType<SceneChanger>().GameOver();
             }
         }
 
@@ -66,6 +59,7 @@ namespace CarterGames.NoPresentsForYou
             presents--;
             presentUI.SetPresentUIValue(presents);
             _data.presentsCollected = presents;
+            SaveManager.SaveGame(_data);
         }
     }
 }
