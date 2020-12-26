@@ -25,6 +25,12 @@ namespace CarterGames.Utilities
     public class UIBSButtonActions : MonoBehaviour
     {
         /// <summary>
+        /// Bool | Defines whether or not the actions should be run, helpful if some buttons need unlocking to work.
+        /// Added in No Presents For You
+        /// </summary>
+        [SerializeField] internal bool canPerformActions = true;
+
+        /// <summary>
         /// UnityEvent | The actions to perfrom when "confirm" is pressed.
         /// </summary>
         [Header("Actions to perform.")]

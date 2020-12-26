@@ -21,6 +21,7 @@ namespace CarterGames.NoPresentsForYou
         internal GameObject toMoveTo;
         private RaycastHit _hit;
 
+
         private void Start()
         {
             player = GameObject.FindGameObjectWithTag("Player").gameObject;
@@ -69,7 +70,6 @@ namespace CarterGames.NoPresentsForYou
         /// <summary>
         /// Legit using my Y1-PF-AE2 Pathfinding Solution, as it still works and my pervious attempt had a few troubles with walls/holes.
         /// </summary>
-        /// <returns></returns>
         internal void ChooseDirection()
         {
             Vector3 _check = player.transform.position - transform.position;
@@ -178,7 +178,7 @@ namespace CarterGames.NoPresentsForYou
                 case Moves.Up:
                     if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && !_hit.collider.CompareTag("Em"))
                             return true;
                         else
                             return false;
@@ -188,7 +188,7 @@ namespace CarterGames.NoPresentsForYou
                 case Moves.Down:
                     if (Physics.Raycast(transform.position, transform.forward * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && !_hit.collider.CompareTag("Em"))
                             return true;
                         else
                             return false;
@@ -198,7 +198,7 @@ namespace CarterGames.NoPresentsForYou
                 case Moves.Left:
                     if (Physics.Raycast(transform.position, transform.right * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && !_hit.collider.CompareTag("Em"))
                             return true;
                         else
                             return false;
@@ -208,7 +208,7 @@ namespace CarterGames.NoPresentsForYou
                 case Moves.Right:
                     if (Physics.Raycast(transform.position, -transform.right * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && !_hit.collider.CompareTag("Em"))
                             return true;
                         else
                             return false;

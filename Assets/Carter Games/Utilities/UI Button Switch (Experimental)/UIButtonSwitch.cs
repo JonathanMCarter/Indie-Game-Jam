@@ -251,8 +251,11 @@ namespace CarterGames.Utilities
             {
                 if (action.Menu.Accept.phase.Equals(InputActionPhase.Performed))
                 {
-                    buttons[pos].GetComponent<UIBSButtonActions>().action.Invoke();
-                    StartCoroutine(ButtonDelay());
+                    if (buttons[pos].GetComponent<UIBSButtonActions>().canPerformActions)
+                    {
+                        buttons[pos].GetComponent<UIBSButtonActions>().action.Invoke();
+                        StartCoroutine(ButtonDelay());
+                    }
                 }
             }
         }
