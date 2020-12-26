@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using CarterGames.Assets.AudioManager;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -25,11 +26,14 @@ namespace CarterGames.NoPresentsForYou
         [SerializeField] private float startDelay;
         public int tick;
 
+        private AudioManager am;
+
 
         private void Awake()
         {
             movesThisTurn = new List<GameObject>();
             StartCoroutine(StartDelay());
+            am = FindObjectOfType<AudioManager>();
         }
 
 
@@ -47,6 +51,7 @@ namespace CarterGames.NoPresentsForYou
                     PerformPlayerAction();
                     timer = 0;
                     tick++;
+                    am.Play("click");
                 }
 
                 if (actionTimer < timeBetweenTurns)
@@ -58,6 +63,7 @@ namespace CarterGames.NoPresentsForYou
                     PerformPlayerAction();
                     actionTimer = 0;
                     tick++;
+                    am.Play("click");
                 }
             }
         }

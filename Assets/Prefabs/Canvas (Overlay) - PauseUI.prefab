@@ -818,6 +818,7 @@ GameObject:
   - component: {fileID: 2829896360968351848}
   - component: {fileID: 2829896360968351855}
   - component: {fileID: 2829896360968351854}
+  - component: {fileID: 7044056287020465825}
   m_Layer: 5
   m_Name: MenuUIBG
   m_TagString: Untagged
@@ -919,6 +920,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7044056287020465825}
+        m_TargetAssemblyTypeName: CarterGames.NoPresentsForYou.UIBSAudio, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2829896360968351854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +946,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shouldScaleOnHover: 1
   scaleFactor: 1.05
+--- !u!114 &7044056287020465825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829896360968351850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5abafae5667269f48971bd8d5824df2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clipsNameToPlay: click
 --- !u!1 &2829896361483288316
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,6 +19,7 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             fadeOut = FindObjectsOfType<FadeOutOnEnd>();
+            tc = FindObjectOfType<TurnController>();
         }
 
 
@@ -29,7 +30,7 @@ namespace CarterGames.NoPresentsForYou
                 FadeOutLevel();
                 DisableObjects();
                 tc.isRunning = false;
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<SceneChanger>().LevelWon();
+                GameObject.FindGameObjectWithTag("Changer").GetComponent<SceneChanger>().LevelWon();
             }
         }
 
