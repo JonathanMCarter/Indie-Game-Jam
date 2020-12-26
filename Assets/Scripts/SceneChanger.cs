@@ -18,6 +18,7 @@ namespace CarterGames.NoPresentsForYou
         [SerializeField] private DeathQuotes quotes;
         [SerializeField] private GameManager gm;
         private SaveData _data;
+        private TurnController tc;
 
 
         private void OnDisable()
@@ -29,6 +30,7 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             _data = SaveManager.LoadGame();
+            tc = FindObjectOfType<TurnController>();
 
             if (GameObject.FindGameObjectWithTag("GameController"))
                 gm = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
@@ -61,6 +63,7 @@ namespace CarterGames.NoPresentsForYou
         private IEnumerator LevelReset()
         {
             exit.FadeOutLevel();
+            tc.isRunning = false;
 
             for (int i = 0; i < deathElements.Length; i++)
             {

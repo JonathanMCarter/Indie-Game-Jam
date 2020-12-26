@@ -401,24 +401,27 @@ namespace CarterGames.Assets.AudioManager
             int _amount = 0;
             List<string> _allFiles = new List<string>();
 
-            for (int i = 0; i < audioManagerScript.audioManagerFile.directory.Count; i++)
+            if (audioManagerScript.audioManagerFile.directory != null)
             {
-                if (AreAllDirctoryStringsBlank())
+                for (int i = 0; i < audioManagerScript.audioManagerFile.directory.Count; i++)
                 {
-                    _allFiles = new List<string>(Directory.GetFiles(Application.dataPath + "/audio"));
-                }
-                else
-                {
-                    if (Directory.Exists(Application.dataPath + "/audio/" + audioManagerScript.audioManagerFile.directory[i]))
+                    if (AreAllDirctoryStringsBlank())
                     {
-                        // 2.3.1 - adds a range so it adds each directory to the asset 1 by 1
-                        _allFiles.AddRange(new List<string>(Directory.GetFiles(Application.dataPath + "/audio/" + audioManagerScript.audioManagerFile.directory[i])));
+                        _allFiles = new List<string>(Directory.GetFiles(Application.dataPath + "/audio"));
                     }
                     else
                     {
-                        // !Warning Message - shown in the console should there not be a directory named what the user entered
-                        _allFiles = new List<string>();
-                        shouldShowMessage = true;
+                        if (Directory.Exists(Application.dataPath + "/audio/" + audioManagerScript.audioManagerFile.directory[i]))
+                        {
+                            // 2.3.1 - adds a range so it adds each directory to the asset 1 by 1
+                            _allFiles.AddRange(new List<string>(Directory.GetFiles(Application.dataPath + "/audio/" + audioManagerScript.audioManagerFile.directory[i])));
+                        }
+                        else
+                        {
+                            // !Warning Message - shown in the console should there not be a directory named what the user entered
+                            _allFiles = new List<string>();
+                            shouldShowMessage = true;
+                        }
                     }
                 }
             }
