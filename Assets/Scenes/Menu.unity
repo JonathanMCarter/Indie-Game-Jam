@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasScannedOnce: 0
   shouldShowDir: 1
-  shouldShowClips: 0
+  shouldShowClips: 1
   audioManagerFile: {fileID: 11400000, guid: ec6fdb95d1515cb44abd47420dac0a5b, type: 2}
   lastAudioManagerFile: {fileID: 11400000, guid: ec6fdb95d1515cb44abd47420dac0a5b, type: 2}
   soundPrefab: {fileID: 977031777656076914, guid: c40912f5a7dede148af5b68dd313394f, type: 3}
@@ -1749,7 +1749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3726620359734635449, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}

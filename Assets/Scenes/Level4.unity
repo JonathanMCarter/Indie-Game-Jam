@@ -38658,8 +38658,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286346713
-  m_fontColor: {r: 0.8490566, g: 0.46057317, b: 0.48689255, a: 1}
+    rgba: 4283188902
+  m_fontColor: {r: 0.6509434, g: 0.2732734, b: 0.29971018, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -52614,6 +52614,10 @@ PrefabInstance:
       value: Enemy-Slow
       objectReference: {fileID: 0}
     - target: {fileID: 7513514126967238361, guid: 02cdf6a60f932054684c61062491c7db, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513514126967238361, guid: 02cdf6a60f932054684c61062491c7db, type: 3}
       propertyPath: m_TagString
       value: Em
       objectReference: {fileID: 0}
@@ -52638,6 +52642,10 @@ PrefabInstance:
     - target: {fileID: 8603381333272190180, guid: b7732ddcbb4f5af4ba8265fbd5328cea, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603381333272190180, guid: b7732ddcbb4f5af4ba8265fbd5328cea, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8603381333272190180, guid: b7732ddcbb4f5af4ba8265fbd5328cea, type: 3}
       propertyPath: m_TagString

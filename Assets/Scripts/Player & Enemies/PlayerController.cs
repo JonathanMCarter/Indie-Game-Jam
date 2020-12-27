@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using CarterGames.Assets.AudioManager;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -20,6 +18,7 @@ namespace CarterGames.NoPresentsForYou
         private Actions actions;
         private TurnController tc;
         private GameObject toMoveTo;
+        private AudioManager am;
 
 
         private void OnEnable()
@@ -38,6 +37,7 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             tc = GameObject.FindGameObjectWithTag("TurnController").GetComponent<TurnController>();
+            am = FindObjectOfType<AudioManager>();
         }
 
 
@@ -56,6 +56,7 @@ namespace CarterGames.NoPresentsForYou
         {
             if (other.CompareTag("Em"))
             {
+                am.Play("lose");
                 gameObject.SetActive(false);
                 GameObject.FindGameObjectWithTag("Changer").GetComponent<SceneChanger>().LevelFailed();
             }
@@ -160,7 +161,7 @@ namespace CarterGames.NoPresentsForYou
 
                     if (Physics.Raycast(transform.position, -transform.forward * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && (!_hit.collider.CompareTag("Em")))
                         {
                             toMoveTo = _hit.collider.gameObject;
                         }
@@ -171,7 +172,7 @@ namespace CarterGames.NoPresentsForYou
 
                     if (Physics.Raycast(transform.position, transform.forward * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && (!_hit.collider.CompareTag("Em")))
                         {
                             toMoveTo = _hit.collider.gameObject;
                         }
@@ -182,7 +183,7 @@ namespace CarterGames.NoPresentsForYou
 
                     if (Physics.Raycast(transform.position, transform.right * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && (!_hit.collider.CompareTag("Em")))
                         {
                             toMoveTo = _hit.collider.gameObject;
                         }
@@ -193,7 +194,7 @@ namespace CarterGames.NoPresentsForYou
 
                     if (Physics.Raycast(transform.position, -transform.right * 2f, out _hit))
                     {
-                        if (_hit.collider.CompareTag("Tile"))
+                        if (_hit.collider.CompareTag("Tile") && (!_hit.collider.CompareTag("Em")))
                         {
                             toMoveTo = _hit.collider.gameObject;
                         }

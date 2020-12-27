@@ -13537,8 +13537,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286346713
-  m_fontColor: {r: 0.8490566, g: 0.46057317, b: 0.48689255, a: 1}
+    rgba: 4283188902
+  m_fontColor: {r: 0.6509434, g: 0.2732734, b: 0.29971018, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -17558,7 +17558,7 @@ GameObject:
   - component: {fileID: 999996352}
   - component: {fileID: 999996351}
   - component: {fileID: 999996350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy (1)
   m_TagString: Em
   m_Icon: {fileID: 0}
@@ -25738,7 +25738,7 @@ GameObject:
   - component: {fileID: 1489801303}
   - component: {fileID: 1489801302}
   - component: {fileID: 1489801308}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Em
   m_Icon: {fileID: 0}

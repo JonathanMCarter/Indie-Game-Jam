@@ -1,5 +1,6 @@
 using UnityEngine;
 using CarterGames.Utilities;
+using CarterGames.Assets.AudioManager;
 
 /*
 *  Copyright (c) Jonathan Carter
@@ -14,12 +15,14 @@ namespace CarterGames.NoPresentsForYou
         [SerializeField] private TurnController tc;
         [SerializeField] private FadeOutOnEnd[] fadeOut;
         [SerializeField] private GameObject[] toDisable;
+        private AudioManager am;
 
 
         private void Start()
         {
             fadeOut = FindObjectsOfType<FadeOutOnEnd>();
             tc = FindObjectOfType<TurnController>();
+            am = FindObjectOfType<AudioManager>();
         }
 
 
@@ -27,6 +30,7 @@ namespace CarterGames.NoPresentsForYou
         {
             if (other.CompareTag("Player"))
             {
+                am.Play("door");
                 FadeOutLevel();
                 DisableObjects();
                 tc.isRunning = false;
