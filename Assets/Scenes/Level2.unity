@@ -1563,6 +1563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas (Overlay) - Transitions
       objectReference: {fileID: 0}
+    - target: {fileID: 3726620359734635449, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}
 --- !u!1 &155250493
@@ -10032,7 +10036,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: c5da271b03fcc0a4984399b348505b3a, type: 2}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0

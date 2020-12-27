@@ -14,7 +14,7 @@ namespace CarterGames.NoPresentsForYou
     {
         [SerializeField] private int presents;
         [SerializeField] private PresentUI[] presentUI;
-        private SaveData _data;
+        internal SaveData _data;
 
 
         private void Start()
@@ -31,8 +31,6 @@ namespace CarterGames.NoPresentsForYou
 
         private void Update()
         {
-            SaveManager.SaveGame(_data);
-
             if (presents < 0)
             {
                 FindObjectOfType<SceneChanger>().GameOver();

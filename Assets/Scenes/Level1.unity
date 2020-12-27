@@ -1935,7 +1935,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 33
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -6400,7 +6400,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 0}
+  sharedProfile: {fileID: 11400000, guid: c5da271b03fcc0a4984399b348505b3a, type: 2}
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9897,7 +9897,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -13789,6 +13789,10 @@ PrefabInstance:
     - target: {fileID: 3726620359734635449, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}
       propertyPath: m_Name
       value: Canvas (Overlay) - Transitions
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726620359734635449, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0abd489223cbc304d9bb3470bd00ccbf, type: 3}

@@ -92,19 +92,20 @@ namespace CarterGames.NoPresentsForYou
         {
             gm.SavePresents();
             exit.FadeOutLevel();
+            _data = SaveManager.LoadGame();
             _data.lastLevel = SceneManager.GetActiveScene().name;
             SaveManager.SaveGame(_data);
             trans.SetTrigger("Fade");
 
             yield return new WaitForSeconds(1f);
 
-            if (!SceneManager.GetActiveScene().name.Contains("5"))
+            if (!SceneManager.GetActiveScene().name.Contains("6"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
             {
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("GameWon");
             }
         }
 
