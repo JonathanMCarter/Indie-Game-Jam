@@ -10,6 +10,7 @@ TagManager:
   - Exit
   - DeathUI
   - Changer
+  - Trans
   layers:
   - Default
   - TransparentFX

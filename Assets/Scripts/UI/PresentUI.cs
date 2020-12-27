@@ -28,5 +28,11 @@ namespace CarterGames.NoPresentsForYou
         {
             text.text = string.Format("x {0}", value);
         }
+
+
+        public void SetPresentUIValue(int value, string customString)
+        {
+            text.text = string.Format(customString, value);
+        }
     }
 }
