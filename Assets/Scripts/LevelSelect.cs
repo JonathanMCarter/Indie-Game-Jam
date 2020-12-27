@@ -22,21 +22,43 @@ namespace CarterGames.NoPresentsForYou
         private void Start()
         {
             _data = SaveManager.LoadGame();
-            levelsUnlocked = int.Parse(_data.lastLevel.Substring(_data.lastLevel.Length - 1));
+
+            if (!_data.presentsCollected.Equals(0))
+                levelsUnlocked = int.Parse(_data.lastLevel.Substring(_data.lastLevel.Length - 1)) + 1;
 
 
-            for (int i = 0; i < padlocks.Length; i++)
+            if (levelsUnlocked > 1)
             {
-                if (i + 1 <= levelsUnlocked)
+                for (int i = 0; i < padlocks.Length; i++)
                 {
-                    levelNumbers[i].SetActive(true);
-                    padlocks[i].SetActive(false);
+                    if (i + 1 <= levelsUnlocked)
+                    {
+                        levelNumbers[i].SetActive(true);
+                        padlocks[i].SetActive(false);
+                    }
+                    else
+                    {
+                        levelNumbers[i].SetActive(false);
+                        padlocks[i].SetActive(true);
+                        padlocks[i].GetComponentInParent<UIBSButtonActions>().canPerformActions = false;
+                    }
                 }
-                else
+            }
+            else
+            {
+                for (int i = 0; i < padlocks.Length; i++)
                 {
-                    levelNumbers[i].SetActive(false);
-                    padlocks[i].SetActive(true);
-                    padlocks[i].GetComponentInParent<UIBSButtonActions>().canPerformActions = false;
+                    if (i.Equals(0))
+                    {
+                        levelNumbers[i].SetActive(true);
+                        padlocks[i].SetActive(false);
+                    }
+                    else
+                    {
+                        levelNumbers[i].SetActive(false);
+                        padlocks[i].SetActive(true);
+                        padlocks[i].GetComponentInParent<UIBSButtonActions>().canPerformActions = false;
+                    }
                 }
             }
         }

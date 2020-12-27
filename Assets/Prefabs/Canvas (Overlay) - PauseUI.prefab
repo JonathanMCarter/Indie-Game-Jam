@@ -1468,6 +1468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4723e437b91ae9a488686f936a7da1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPerformActions: 1
   action:
     m_PersistentCalls:
       m_Calls:
@@ -1724,6 +1725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4723e437b91ae9a488686f936a7da1f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPerformActions: 1
   action:
     m_PersistentCalls:
       m_Calls:

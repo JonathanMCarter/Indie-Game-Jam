@@ -13,32 +13,24 @@ namespace CarterGames.NoPresentsForYou
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private int presents;
-        [SerializeField] private PresentUI presentUI;
-        private SaveData _data;
+        [SerializeField] private PresentUI[] presentUI;
+        internal SaveData _data;
 
 
         private void Start()
         {
             _data = SaveManager.LoadGame();
             presents = _data.presentsCollected;
-            presentUI = FindObjectOfType<PresentUI>();
-            presentUI.SetPresentUIValue(presents);
+
+            if (presentUI[0])
+            {
+                presentUI[0].SetPresentUIValue(presents);
+            }
         }
 
 
         private void Update()
         {
-
-            presentUI = FindObjectOfType<PresentUI>();
-
-            if (presentUI)
-            {
-                presentUI.SetPresentUIValue(presents);
-            }
-
-            SaveManager.SaveGame(_data);
-
-
             if (presents < 0)
             {
                 FindObjectOfType<SceneChanger>().GameOver();
@@ -49,15 +41,21 @@ namespace CarterGames.NoPresentsForYou
         public void AddPresents()
         {
             presents++;
-            presentUI.SetPresentUIValue(presents);
+            presentUI[1].SetPresentUIValue(presents - _data.presentsCollected, "+ {0}");
+        }
+
+
+        public void SavePresents()
+        {
             _data.presentsCollected = presents;
+            SaveManager.SaveGame(_data);
         }
 
 
         public void RemovePresent()
         {
             presents--;
-            presentUI.SetPresentUIValue(presents);
+            presentUI[0].SetPresentUIValue(presents);
             _data.presentsCollected = presents;
             SaveManager.SaveGame(_data);
         }

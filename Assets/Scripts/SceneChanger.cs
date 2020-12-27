@@ -17,7 +17,8 @@ namespace CarterGames.NoPresentsForYou
         [SerializeField] private GameObject[] deathElements;
         [SerializeField] private DeathQuotes quotes;
         [SerializeField] private GameManager gm;
-        private SaveData _data;
+        [SerializeField] private SaveData _data;
+        [SerializeField] private Animator trans;
         private TurnController tc;
 
 
@@ -42,6 +43,8 @@ namespace CarterGames.NoPresentsForYou
             {
                 deathElements[i].SetActive(false);
             }
+
+            trans = GameObject.FindGameObjectWithTag("Trans").GetComponentInChildren<Animator>();
         }
 
 
@@ -64,6 +67,7 @@ namespace CarterGames.NoPresentsForYou
         {
             exit.FadeOutLevel();
             tc.isRunning = false;
+            trans.SetTrigger("Fade");
 
             for (int i = 0; i < deathElements.Length; i++)
             {
@@ -86,16 +90,22 @@ namespace CarterGames.NoPresentsForYou
 
         private IEnumerator NextLevel()
         {
+            gm.SavePresents();
             exit.FadeOutLevel();
+            _data = SaveManager.LoadGame();
+            _data.lastLevel = SceneManager.GetActiveScene().name;
+            SaveManager.SaveGame(_data);
+            trans.SetTrigger("Fade");
+
             yield return new WaitForSeconds(1f);
 
-            if (!SceneManager.GetActiveScene().name.Contains("5"))
+            if (!SceneManager.GetActiveScene().name.Contains("6"))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             else
             {
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("GameWon");
             }
         }
 
