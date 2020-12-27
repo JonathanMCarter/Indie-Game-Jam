@@ -8916,7 +8916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 825074221}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15549,7 +15549,7 @@ GameObject:
   - component: {fileID: 1489801303}
   - component: {fileID: 1489801302}
   - component: {fileID: 1489801308}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Enemy
   m_TagString: Em
   m_Icon: {fileID: 0}
