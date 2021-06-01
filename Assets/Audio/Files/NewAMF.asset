@@ -12,9 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a550171c18a144be85aee12017d69, type: 3}
   m_Name: NewAMF
   m_EditorClassIdentifier: 
-  clipName: []
-  audioClip: []
-  soundPrefab: {fileID: 0}
-  isPopulated: 0
-  hasDirectories: 0
-  directory: []
+  audioMixer:
+  - {fileID: 6618243439129353613, guid: a3a7128f415d7524da6350341a480450, type: 2}
+  - {fileID: -1866596762168872423, guid: a3a7128f415d7524da6350341a480450, type: 2}
+  soundPrefab: {fileID: 977031777656076914, guid: c40912f5a7dede148af5b68dd313394f, type: 3}
+  isPopulated: 1
+  hasDirectories: 1
+  directory:
+  - SFX
+  library:
+  - key: click
+    value: {fileID: 8300000, guid: 13d5b1dfc19f7cd4c9cee9d189832099, type: 3}
+  - key: ding
+    value: {fileID: 8300000, guid: 0fc7118656717b94da6c41c79a129d26, type: 3}
+  - key: door
+    value: {fileID: 8300000, guid: 52a77253348237645a71bfc4aa1f789c, type: 3}
+  - key: lose
+    value: {fileID: 8300000, guid: ff24c1632fb367c4aba07d4d438ad1b9, type: 3}
+  - key: yay
+    value: {fileID: 8300000, guid: 2292f61d73429cb4c9318939f1c530e2, type: 3}
